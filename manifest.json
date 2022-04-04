@@ -1,5 +1,5 @@
 {
-  "author": "Christian Mund <opensource@mundpropaganda.net>",
+  "author": "Hematoxi&Co",
   "background": {
     "page": "background.html",
     "persistent": true
@@ -13,7 +13,7 @@
       "128": "img/icon128.png"
     }
   },
-  "description": "Chromium browser extension that provides browser and extensions update notifications and extensions management functionality. Chromium versions are synced with Woolyss' Website.",
+  "description": "Extensión para Chromium que te avisa de actualizaciones. Las versiones de Chromium estás sincronizadas con el sitio web de Woolyss",
   "icons": {
     "16": "img/icon16.png",
     "32": "img/icon32.png",
@@ -22,8 +22,7 @@
   },
   "homepage_url": "https://github.com/kkkrist/chromium-notifier",
   "manifest_version": 2,
-  "name": "Chromium Update Notifications",
+  "name": "Actualizador Chromium",
   "permissions": ["alarms", "management", "storage", "*://clients2.google.com/service/*"],
-  "update_url": "https://raw.githubusercontent.com/kkkrist/chromium-notifier/master/gupdate.xml",
-  "version": "1.8.9"
+  "version": "1.0.0"
 }
