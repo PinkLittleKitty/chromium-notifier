@@ -1,6 +1,6 @@
-# Chromium Update Notifications
+# Notificador Chromium
 
-This extension will periodically check [Woolyss](https://chromium.woolyss.com/) and display a "New" icon badge once the version found for the selected platform/tag is different to the one you're currently using. Additionally it can track updates for and manage all installed extensions (those supporting it).
+Esta extensión es un fork de [kkkrist/chromium-notifier](https://github.com/kkkrist/chromium-notifier), y su funció es   [Woolyss](https://chromium.woolyss.com/) and display a "New" icon badge once the version found for the selected platform/tag is different to the one you're currently using. Additionally it can track updates for and manage all installed extensions (those supporting it).
 
 <img height="639" src="https://raw.githubusercontent.com/kkkrist/chromium-notifier/master/img/screenshot.webp" width="375" />
 
