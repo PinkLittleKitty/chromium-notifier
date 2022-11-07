@@ -2,7 +2,7 @@
 
 Esta extensión es un fork en español para uso personal de [kkkrist/chromium-notifier](https://github.com/kkkrist/chromium-notifier), y su función es buscar actualizaciones periódicamente en [Woolyss](https://chromium.woolyss.com/) y avisarte con un iconito de "Mirá" al encontrar una versión más actualizada para la plataforma y versión seleccionadas. Además, puede buscar actualizaciones para todas las actualizaciones instaladas que lo soporten.
 
-<img height="639" src="https://raw.githubusercontent.com/pinklittlekitty/chromium-notifier/master/img/screenshot.png" width="375" />
+<img height="639" src="https://raw.githubusercontent.com/pinklittlekitty/chromium-notifier/master/img/Screenshot.png" width="375" />
 
 ## Instalación
 
