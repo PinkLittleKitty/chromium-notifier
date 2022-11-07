@@ -132,7 +132,7 @@ chrome.storage.onChanged.addListener(async () => {
   chrome.browserAction.setBadgeText({
     text:
       (current && uaFullVersion !== current.version) || extensionsNew
-        ? 'New'
+        ? 'Mirá'
         : ''
   })
 

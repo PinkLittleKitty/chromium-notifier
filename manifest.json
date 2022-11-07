@@ -1,5 +1,5 @@
 {
-  "author": "Christian Mund <opensource@mundpropaganda.net>",
+  "author": "Hematoxi&Co",
   "background": {
     "page": "background.html",
     "persistent": true
@@ -7,22 +7,31 @@
   "browser_action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "img/icon16.png",
-      "32": "img/icon32.png",
-      "48": "img/icon48.png",
-      "128": "img/icon128.png"
+      "16": "img/icon_16.png",
+      "24": "img/icon_24.png",
+      "32": "img/icon_32.png",
+      "48": "img/icon_48.png",
+      "64": "img/icon_64.png",
+      "128": "img/icon_128.png",
+      "256": "img/icon_256.png"
     }
   },
-  "description": "Extensión para Chromium que te avisa de actualizaciones. Las versiones de Chromium estás sincronizadas con el sitio web de Woolyss",
+  "description": "Extensión para Chromium que te avisa de actualizaciones. Las versiones de Chromium están sincronizadas con el sitio web de Woolyss",
   "icons": {
-    "16": "img/icon16.png",
-    "32": "img/icon32.png",
-    "48": "img/icon48.png",
-    "128": "img/icon128.png"
+    "16": "img/icon_16.png",
+    "24": "img/icon_24.png",
+    "32": "img/icon_32.png",
+    "48": "img/icon_48.png",
+    "64": "img/icon_64.png",
+    "128": "img/icon_128.png",
+    "256": "img/icon_256.png"
   },
-  "homepage_url": "https://github.com/kkkrist/chromium-notifier",
+  "homepage_url": "https://github.com/PinkLittleKitty/chromium-notifier",
   "manifest_version": 2,
-  "name": "Actualizador Chromium",
+  "minimum_chrome_version": "45",
+  "name": "Notificador Chromium",
   "permissions": ["alarms", "management", "storage", "*://clients2.google.com/service/*"],
-  "version": "1.0.0"
+  "update_url": "https://raw.githubusercontent.com/PinkLittleKitty/chromium-notifier/master/gupdate.xml",
+  "version": "1.8.10",
+  "version_name": "1.8.10"
 }

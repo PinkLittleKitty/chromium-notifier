@@ -63,19 +63,19 @@ const ChromiumInfo = ({ arch, current = {}, currentVersion, tag }) => html`
     <summary>Chromium <code>v${currentVersion}</code></summary>
     <ul>
       <li>
-        <span>Current: </span>
+        <span>Actual: </span>
         <code class="${current.version !== currentVersion && 'badge'}"
           >v${current.version}</code
         >
       </li>
       <li>
-        <span>Revision: ${current.revision} </span>
+        <span>Revisión: ${current.revision} </span>
         (${new Date(current.timestamp * 1000).toLocaleString()})
       </li>
       ${current.links &&
         html`
           <li>
-            <span>Downloads: </span>
+            <span>Descargas: </span>
             ${current.links.map(
               ({ label, url }, i) => html`
                 <a href="${url}" target="_blank">${label}</a>
@@ -86,7 +86,7 @@ const ChromiumInfo = ({ arch, current = {}, currentVersion, tag }) => html`
         `}
     </ul>
     <div style="font-size: smaller; margin-top: 1em">
-      <span>Tracking </span>
+      <span>Siguiendo </span>
       <a href="https://chromium.woolyss.com/#${arch}-${tag}" target="_blank"
         >${arch}-${tag}</a
       >
@@ -114,7 +114,7 @@ const ExtensionsInfo = ({
         extensions.find(({ version }) => version === e.version)
       )}"
     >
-      <summary>${extensions.length} Extensions</summary>
+      <summary>${extensions.length} Extensiones</summary>
       <ul class="extensions">
         ${supported.map(ext => {
           const info = extensionsInfo.find(matchExtension(ext))
@@ -164,7 +164,7 @@ const ExtensionsInfo = ({
       </ul>
       ${unsupported.length > 0 &&
         html`
-          <p style="margin-bottom: 0;">No update info available:</p>
+          <p style="margin-bottom: 0;">No hay información de actualizaciones disponibles:</p>
           <ul class="extensions">
             ${unsupported.map(ext => {
               const info = extensionsInfo.find(({ id }) => id === ext.id)
@@ -210,14 +210,14 @@ const Header = ({ version }) => html`
   <div>
     <div>
       <p style="color: #202124; margin: 0">
-        <strong>Chromium Update Notifications </strong>
+        <strong>Notificador Chromium </strong>
         <code>${version && `v${version}`}</code>
       </p>
-      <span>based on </span>
+      <span>basado en </span>
       <a href="https://chromium.woolyss.com/" target="_blank">Woolyss</a>
     </div>
     <div class="header-cell">
-      <a href="https://github.com/kkkrist/chromium-notifier" target="_blank">
+      <a href="https://github.com/PinkLittleKitty/chromium-notifier" target="_blank">
         <img src="../img/github.svg" style="height: 1rem; width: auto;" />
       </a>
     </div>
@@ -253,16 +253,16 @@ const Settings = ({
   versions
 }) => html`
   <details open="${!arch || !tag}">
-    <summary>Settings</summary>
+    <summary>Opciones</summary>
     <div>
       <label>
-        <p>Platform</p>
+        <p>Plataforma</p>
         <select
           disabled="${!Object.keys(versions).length}"
           onChange="${changePlatform}"
         >
           <option disabled="${arch && versions[arch]}" value=""
-            >Choose platform…</option
+            >Elegir plataforma…</option
           >
           ${Object.keys(versions).map(
             archOpt => html`
@@ -274,9 +274,9 @@ const Settings = ({
         </select>
       </label>
       <label>
-        <p>Tag</p>
+        <p>tag</p>
         <select disabled="${!arch || !versions[arch]}" onChange="${changeTag}">
-          <option disabled="${tag}" value="">Choose tag…</option>
+          <option disabled="${tag}" value="">Elegir versión…</option>
           ${arch &&
             versions[arch] &&
             versions[arch].map(
@@ -298,7 +298,7 @@ const Settings = ({
             style="margin: 0.25rem 0.25rem 0 0"
             type="checkbox"
           />
-          Track extension updates
+          Seguir actualizaciones de extensiones
         </label>
 
         <br />
@@ -312,10 +312,10 @@ const Settings = ({
             style="margin: 0 0.25rem 0 0"
             type="checkbox"
           />
-          Increase privacy (<a
-            href="https://github.com/kkkrist/chromium-extension-service/#version-info-for-installed-extensions"
+          Aumentar Privacidad (<a
+            href="https://github.com/PinkLittleKitty/chromium-extension-service/blob/master/README.md#informaci%C3%B3n-de-versiones-de-las-extensiones-instaladas"
             target="_blank"
-            >more info</a
+            >más info</a
           >)
         </label>
       </p>
@@ -329,7 +329,7 @@ const Settings = ({
             style="margin: 0 0.25rem 0 0"
             type="checkbox"
           />
-          Enable error tracking
+          Permitir seguimiento de errores
         </label>
       </p>
     </div>
@@ -438,13 +438,13 @@ class App extends Component {
       <${Section}>
         <small>
           ${timestamp
-            ? `Last update: ${new Date(timestamp).toLocaleString()}`
-            : `Waiting for data…`}
+            ? `Última actualización: ${new Date(timestamp).toLocaleString()}`
+            : `Esperando datos…`}
         </small>
         ${error &&
           html`
             <small style="color: red; margin-top: 0.5rem;">
-              Last error: ${error}
+              Último error: ${error}
             </small>
           `}
       <//>
