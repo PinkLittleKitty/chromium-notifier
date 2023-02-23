@@ -3,18 +3,7 @@ import {
   getConfig,
   getExtensionsInfo,
   getUserAgentData,
-  trackError
 } from './utils.js'
-
-window.onerror = e => {
-  trackError(e)
-  return false
-}
-
-window.onunhandledrejection = e => {
-  trackError(e)
-  return false
-}
 
 const main = async (...args) => {
   const config = await getConfig()
@@ -23,9 +12,9 @@ const main = async (...args) => {
   console.debug(now.toISOString(), args)
 
   if (!navigator.onLine) {
-    return console.debug(`We're not online, aborting.`, config)
+    return console.debug(`No estamos online, abortando.`, config)
   } else {
-    console.debug('updating', config)
+    console.debug('actualizando', config)
   }
 
   const {

@@ -6,18 +6,7 @@ import {
   getExtensionsInfo,
   getUserAgentData,
   matchExtension,
-  trackError
 } from './utils.js'
-
-window.onerror = e => {
-  trackError(e)
-  return false
-}
-
-window.onunhandledrejection = e => {
-  trackError(e)
-  return false
-}
 
 const html = htm.bind(h)
 
@@ -164,7 +153,7 @@ const ExtensionsInfo = ({
       </ul>
       ${unsupported.length > 0 &&
         html`
-          <p style="margin-bottom: 0;">No hay información de actualizaciones disponibles:</p>
+          <p style="margin-bottom: 0;">No hay información de actualizaciones disponible:</p>
           <ul class="extensions">
             ${unsupported.map(ext => {
               const info = extensionsInfo.find(({ id }) => id === ext.id)
@@ -249,7 +238,6 @@ const Settings = ({
   errorTracking,
   extensionsTrack,
   tag,
-  useProxy,
   versions
 }) => html`
   <details open="${!arch || !tag}">
@@ -274,7 +262,7 @@ const Settings = ({
         </select>
       </label>
       <label>
-        <p>tag</p>
+        <p>Versión</p>
         <select disabled="${!arch || !versions[arch]}" onChange="${changeTag}">
           <option disabled="${tag}" value="">Elegir versión…</option>
           ${arch &&
@@ -300,24 +288,6 @@ const Settings = ({
           />
           Seguir actualizaciones de extensiones
         </label>
-
-        <br />
-
-        <label class="${!extensionsTrack ? 'disabled' : ''}">
-          <input
-            checked="${useProxy || useProxy === undefined}"
-            disabled="${!extensionsTrack}"
-            name="useProxy"
-            onChange="${changeBoolSetting}"
-            style="margin: 0 0.25rem 0 0"
-            type="checkbox"
-          />
-          Aumentar Privacidad (<a
-            href="https://github.com/PinkLittleKitty/chromium-extension-service/blob/master/README.md#informaci%C3%B3n-de-versiones-de-las-extensiones-instaladas"
-            target="_blank"
-            >más info</a
-          >)
-        </label>
       </p>
 
       <p style="margin: 0;">
@@ -329,7 +299,7 @@ const Settings = ({
             style="margin: 0 0.25rem 0 0"
             type="checkbox"
           />
-          Permitir seguimiento de errores
+          Seguimiento de errores
         </label>
       </p>
     </div>
@@ -390,7 +360,6 @@ class App extends Component {
       self,
       tag,
       timestamp,
-      useProxy,
       versions
     }
   ) {
@@ -430,7 +399,6 @@ class App extends Component {
           errorTracking="${errorTracking}"
           extensionsTrack="${extensionsTrack}"
           tag="${tag}"
-          useProxy="${useProxy}"
           versions="${versions}"
         />
       <//>
